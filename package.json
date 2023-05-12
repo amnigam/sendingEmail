@@ -1,0 +1,24 @@
+{
+  "name": "emailsender",
+  "version": "1.0.0",
+  "description": "Understanding sending emails using nodemailer and developing a robust email sender",
+  "main": "simpleTest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "basic": "nodemon simpleTest.js",
+    "advanced": "nodemon advancedEmail.js"
+  },
+  "author": "Amit Nigam",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "html-to-text": "^9.0.5",
+    "nodemailer": "^6.9.2",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
