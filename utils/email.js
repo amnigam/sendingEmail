@@ -2,6 +2,7 @@ const nodemailer = require('nodemailer');
 const pug = require('pug'); 
 const htmlToText = require('html-to-text'); 
 
+// Create a class with methods that send out emails with pre-defined templates
 module.exports = class Email {
     // User object contains => 1. Email     2. Full Name    3. SBD Deal ID
     constructor (user, inScope) {
@@ -12,6 +13,7 @@ module.exports = class Email {
         this.from = `Chappandi Swami <${process.env.EMAIL_FROM}>`; 
     }; 
 
+    // A transport method for our class to setup the right Transport object for Nodemailer.
     newTransport() {
         return nodemailer.createTransport( {
             host: process.env.MAILTRAP_HOST,
@@ -23,7 +25,7 @@ module.exports = class Email {
         });
     }; 
 
-    // Send the actual email
+    // Generic method defined to send an email based on the Template & Subject passed to it. 
     async send(template, subject) {
         // Step 1: Render template into HTML format by using PUG
         const html = pug.renderFile(
@@ -52,6 +54,7 @@ module.exports = class Email {
         await this.newTransport().sendMail(mailOptions)
     }; 
 
+    // Method that leverages generic SEND method to send a Welcome Message intimating users for attention.
     async sendWelcome() {
         await this.send('welcome', 'Attention: Important update relating to your project')
     };

@@ -14,8 +14,8 @@ const transport = nodemailer.createTransport({
 
 // Step 2 - Specify Options
 const mailOptions = { 
-    from: 'Chappandi Swami <hello@gaickun.com>',
-    to: 'Idi Undi <support@gaickun.com>', 
+    from: `Chappandi Swami <${process.env.EMAIL_FROM}>`,
+    to: 'Idi Undi <batman@marvel.inc>', 
     subject: 'Testing Email with Nodemailer',
     text: 'Hello from the nodemailer!'
 }; 
