@@ -1,0 +1,22 @@
+doctype html
+html 
+    head 
+        title Capturing Mail Data 
+    body 
+        h1 Test Jacket for Sending Emails using SendGrid. 
+        form(id='form', method='POST', action='/formdata')
+            .element 
+                label(for='name') Name
+                input(type="text", id="name", name="name", placeholder="Enter Name")
+            .element 
+                label(for='mainEmail') Main Email 
+                input(type="email", id="mainEmail", name="mainEmail", placeholder="Enter Main Email")
+            .element 
+                label(for='sbdID') SBD ID 
+                input(type="text", id="sbdID", name="sbd", placeholder="Enter SBD ID") 
+            .element
+                label(for='multiEmails') Multiple Emails 
+                input(type="email", id="multiEmails", name="multiEmails", multiple)
+            .buttons 
+                button(class="form-reset", type="reset", name="reset") Reset
+                button(class="form-submit", type="submit", name="submit") Submit
